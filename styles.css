@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #000266 0%, #14005e 100%);
     min-height: 100vh;
     padding: 20px;
 }
@@ -22,7 +22,7 @@ body {
 }
 
 .header {
-    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    background: linear-gradient(135deg, #3a9bf0 0%, #1dbbc4 100%);
     color: white;
     text-align: center;
     padding: 30px;
@@ -118,10 +118,11 @@ body {
     gap: 8px;
     margin-bottom: 20px;
     margin-top: 10px;
+    margin-left: 10px;
 }
 
 .quick-nav-btn {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #2143d8 0%, #40258a 100%);
     color: white;
     border: none;
     padding: 8px 16px;
@@ -250,7 +251,7 @@ body {
 }
 
 .copy-btn {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #2143d8 0%, #40258a 100%);
     color: white;
     border: none;
     padding: 10px 20px;
@@ -475,6 +476,7 @@ body {
     padding: 3px 8px;
     border-radius: 10px;
     border: 1px solid rgba(79, 172, 254, 0.2);
+    margin-right: 15px ;
 }
 
 
