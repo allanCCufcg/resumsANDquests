@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumos e PI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📋 Ferramenta de Cópia Rápida</h1>
+            <p>Organize seus resumos e questionamentos para cópia instantânea</p>
+        </div>
+
+        <div class="tabs">
+            <button class="tab active" data-tab="resumos">📄 Resumos</button>
+            <button class="tab" data-tab="pi400">❓ PI 400</button>
+            <button class="tab" data-tab="pi400Voepass">✈️ PI 400 - VOEPASS</button>
+            <button class="tab" data-tab="pi100">💯 PI 100</button>
+        </div>
+
+        <div class="content">
+            <div id="resumos" class="tab-content active">
+                <div class="search-container">
+                <input type="text" class="search-box" placeholder="🔍 Digite para buscar resumos..." onkeyup="filterItems('resumos')">
+                <div class="quick-nav" id="resumos-nav"></div>
+                <div style="margin-top: 15px;">
+                    <button class="compact-toggle" onclick="toggleCompact(this, 'resumos')">📋 Modo Compacto</button>
+                </div>
+            </div>
+            <div id="resumos-list"></div>
+        </div>
+
+        <div id="pi400" class="tab-content">
+            <div class="search-container">
+                <input type="text" class="search-box" placeholder="🔍 Digite para buscar questionamentos..." onkeyup="filterItems('pi400')">
+                <div class="quick-nav" id="pi400-nav"></div>
+                <div style="margin-top: 15px;">
+                    <button class="compact-toggle" onclick="toggleCompact(this, 'pi400')">📋 Modo Compacto</button>
+                </div>
+            </div>
+            <div id="pi400-list"></div>
+        </div>
+
+        <div id="pi400Voepass" class="tab-content">
+            <div class="search-container">
+                <input type="text" class="search-box" placeholder="🔍 Digite para buscar questionamentos VOEPASS..." onkeyup="filterItems('pi400Voepass')">
+                <div class="quick-nav" id="pi400Voepass-nav"></div>
+                <div style="margin-top: 15px;">
+                    <button class="compact-toggle" onclick="toggleCompact(this, 'pi400Voepass')">📋 Modo Compacto</button>
+                </div>
+            </div>
+            <div id="pi400Voepass-list"></div>
+        </div>
+
+        <div id="pi100" class="tab-content">
+            <div class="search-container">
+                <input type="text" class="search-box" placeholder="🔍 Digite para buscar questionamentos PI 100..." onkeyup="filterItems('pi100')">
+                <div class="quick-nav" id="pi100-nav"></div>
+                <div style="margin-top: 15px;">
+                    <button class="compact-toggle" onclick="toggleCompact(this, 'pi100')">📋 Modo Compacto</button>
+                </div>
+            </div>
+            <div id="pi100-list"></div>
+        </div>
+    </div>
+
+
+        <!-- Botão de voltar ao topo -->
+        <button class="scroll-top" onclick="scrollToTop()">↑</button>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h3 id="modal-title">Adicionar Item</h3>
+            <div class="form-group">
+                <label for="item-title">Título:</label>
+                <input type="text" id="item-title" placeholder="Digite um título descritivo">
+            </div>
+            <div class="form-group">
+                <label for="item-content">Conteúdo:</label>
+                <textarea id="item-content" placeholder="Cole ou digite o conteúdo aqui..."></textarea>
+            </div>
+            <div class="modal-buttons">
+                <button class="btn btn-secondary" onclick="closeModal()">Cancelar</button>
+                <button class="btn btn-primary" onclick="saveItem()">Salvar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div id="toast" class="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
