@@ -1,0 +1,183 @@
+{
+    "pi100": [
+{
+    "title": "Alteração de voo",
+    "dependent": "Aeroporto de Origem ou do Destino (a depender de onde os fatos ocorreram)",
+    "content": "1) Houve alteração do voo (indicar o numero do voo que foi alterado)? Por qual o motivo? Favor anexar documentos no sistema.\n2) Houve alteração comercial do voo (indicar o voo na pergunta)?\n3) O pax foi avisado com antecedência? Caso positivo, o pax concordou com a alteração?\n4) Foi fornecida assistência ao passageiro? Se sim, quais?\n5) Caso tenha sido fornecida assistência, houve acomodação do pax em hotel? Se sim, indicar o nome do hotel, endereço ou qualquer informação para que possamos verificar a qualidade do hotel\n6) Favor anexar todos os documentos no sistema\n7) Houve contato com o FALE? Quais as tratativas?\n8) Anexar tela que comprove o nome de todos os passageiros que constam na reserva."
+},
+{
+    "title": "Alteração de rota",
+    "dependent": "Aeroporto de Origem ou do Destino (a depender de onde os fatos ocorreram)",
+    "content": "1) Houve alteração de rota do voo (indicar o numero do voo na pergunta), com pouso em aeroporto diverso do contratado? Por qual motivo? Favor anexar os documentos no sistema.\n2) O pax foi avisado no momento em que foi tomada a decisão da alteração?\n3) O pax foi realocado em voo/ônibus para o local contratado? Favor a data e, se voo, o novo voo.\n4) Foi fornecida assistência ao passageiro? Se sim, quais?\n5) Caso tenha sido fornecida assistência, houve acomodação do pax em hotel? Se sim, indicar o nome do hotel, endereço ou qualquer informação para que possamos verificar a qualidade do hotel.\n6) Favor anexar todos os documentos no sistema.\n7) Houve contato com o FALE? Quais as tratativas?\n8) Anexar tela que comprove o nome de todos os passageiros que constam na reserva."
+},
+{
+    "title": "Atraso de voo",
+    "dependent": "Aeroporto de Origem ou do Destino (a depender de onde os fatos ocorreram)",
+    "content": "1) Houve atraso no voo (indicar o numero do voo ou voos afetados na pergunta)? Por qual motivo? De quanto tempo foi o atraso? Favor anexar os documentos no sistema.\n2) Foi fornecida assistência ao passageiro? Caso positivo, quais assistências foram fornecidas? Favor anexar os documentos no sistema. **Se houver perda de conexão**\n3) Houve perda de conexão em razão do atraso?\n4) Foi fornecida assistência ao passageiro? Se sim, quais?\n5) Caso tenha sido fornecida assistência, houve acomodação do pax em hotel? Se sim, indicar o nome do hotel, endereço ou qualquer informação para que possamos verificar a qualidade do hotel.\n6) Favor anexar todos os documentos no sistema.\n7) Houve contato com o FALE? Quais as tratativas?\n8) Anexar tela que comprove o nome de todos os passageiros que constam na reserva."
+},
+{
+    "title": "Cancelamento de voo",
+    "dependent": "Aeroporto de Origem ou do Destino (a depender de onde os fatos ocorreram)",
+    "content": "1) Houve Cancelamento de voo (indicar o número do voo na pergunta)? Por qual o motivo? Favor anexar os documentos no sistema.\n2) Foi fornecida assistência ao passageiro? Se sim, quais?\n3) Caso tenha sido fornecida assistência, houve acomodação do pax em hotel? Se sim, indicar o nome do hotel, endereço ou qualquer informação para que possamos verificar a qualidade do hotel.\n4) Favor anexar todos os documentos no sistema.\n5) Houve contato com o FALE? Quais as tratativas?\n6) Anexar tela que comprove o nome de todos os passageiros que constam na reserva."
+},
+{
+    "title": "Overbooking",
+    "dependent": "Aeroporto de Origem ou do Destino (a depender de onde os fatos ocorreram)",
+    "content": "1) Houve Overbooking (indicar o número do voo na pergunta)? O pax foi reacomodado em qual dia, hora e voo?\n2) Foi fornecida assistência ao passageiro? Se sim, quais?\n3) Caso tenha sido fornecida assistência, houve acomodação do pax em hotel? Se sim, indicar o nome do hotel, endereço ou qualquer informação para que possamos verificar a qualidade do hotel.\n4) Favor anexar todos os documentos no sistema.\n5) Foi paga alguma compensação ao pax? Caso positivo, qual o valor? Favor anexar o comprovante no sistema.\n6) Houve contato com o FALE? Quais as tratativas?\n7) Anexar tela que comprove o nome de todos os passageiros que constam na reserva."
+},
+{
+    "title": "Perda do voo",
+    "dependent": "Aeroporto de Origem ou do Destino (a depender de onde os fatos ocorreram)",
+    "content": "1) O autor perdeu o voo (indicar o número do voo na pergunta)? Por qual motivo?\n2) Foi fornecida assistência ao passageiro? Se sim, quais?\n3) Caso tenha sido fornecida assistência, houve acomodação do pax em hotel? Se sim, indicar o nome do hotel, endereço ou qualquer informação para que possamos verificar a qualidade do hotel.\n4) Favor anexar todos os documentos no sistema.\n5) Foi paga alguma compensação ao pax? Caso positivo, qual o valor? Favor anexar o comprovante no sistema.\n6) Houve contato com o FALE? Quais as tratativas?\n7) O pax foi realocado ou pagou taxa de remarcação? Caso positivo, favor indicar o novo voo, data e horário. Favor anexar os documentos no sistema.\n8) Anexar tela que comprove o nome de todos os passageiros que constam na reserva."
+},
+{
+    "title": "Avaria de Bagagem",
+    "dependent": "Aeroporto de Origem ou do Destino (a depender de onde os fatos ocorreram)",
+    "content": "1) Houve avaria?\n2) Foi aberto RIB? Caso positivo, anexar cópia no sistema.\n3) Havia na bagagem identificação de frágil?\n4) Foi realizado o conserto? Caso positivo, anexar cópia do comprovante de quitação.\n5) Foi pago algum valor ao pax? Favor anexar documentos.\n6) Houve contato com o FALE? Quais as tratativas?"
+},
+{
+    "title": "Bagagem despachada (Paga anteriormente)",
+    "dependent": "SAODP03",
+    "content": "1) Qual o procedimento acerca da bagagem paga com antecedência?\n2) É valido o pagamento de excesso de bagagem anterior ao voo ou pagamento da bagagem despachada acrescido no valor da passagem?\n3) Possuímos documentos? Favor anexar os documentos no sistema.\n4) Houve contato com o FALE? Quais as tratativas?"
+},
+{
+    "title": "Transporte de Animal (exceto como cargas)",
+    "dependent": "EQUIPE RESERVA SAORO - BILHETE/RESERVA",
+    "content": "1) Houve pedido de transporte do animal?\n2) O pedido foi realizado de acordo com os termos que constam no site da cia.?\n3) Foi autorizado o transporte do animal? Dentro da cabine ou no porão?\n4) Porque não foi possível realizar a viagem com o animal?\n5) Houve contato com o FALE? Quais as tratativas?"
+},
+{
+    "title": "Cobrança Indevida - Compra não reconhecida pelo titular",
+    "dependent": "Direta (LATAM): MPCC – Anulações/Devoluções\nIndireta (Agência): Equipe Reserva SAORO – Bilhete/Reserva\nReembolso (bilhete emitido): Equipe Receita – Reembolso",
+    "content": "1) Qual o nome do passageiro constante na reserva adquirida com o cartão do autor?\n2) Houve contestação da compra da passagem?\n3) Houve estorno/reembolso do valor da passagem? Caso positivo, anexar os documentos que comprovem o estorno.\n4) Anexar tela que comprove o nome de todos os passageiros que constam na reserva."
+},
+{
+    "title": "Cobrança Indevida - Compra não finalizada e cobrada",
+    "dependent": "Direta (LATAM): MPCC – Anulações/Devoluções\nIndireta (Agência): Equipe Reserva SAORO – Bilhete/Reserva\nReembolso (bilhete emitido): Equipe Receita – Reembolso",
+    "content": "1) A compra foi finalizada? Caso negativo, qual o motivo da cobrança?\n2) Houve emissão de número de reserva e e-ticket?\n3) Foi reembolsado algum valor? Qual?\n4) Possuímos documentos?"
+},
+{
+    "title": "Cobrança Indevida - Cobrança em duplicidade",
+    "dependent": "Direta (LATAM): MPCC – Anulações/Devoluções\nIndireta (Agência): Equipe Reserva SAORO – Bilhete/Reserva\nReembolso (bilhete emitido): Equipe Receita – Reembolso",
+    "content": "1) A primeira compra da autora foi efetivada?\n2) A origem e destino das reservas são os mesmo?\n3) Os passageiros são os mesmo?\n4) Alguma das reservas foi cancelada?\n5) Possuímos documentos que comprovem? Favor anexar no sistema.\n6) Anexar tela que comprove o nome de todos os passageiros que constam na reserva."
+},
+{
+    "title": "Demora ou Reembolso não realizado",
+    "dependent": "EQUIPE RECEITA - REEMBOLSO",
+    "content": "1) Houve a solicitação de reembolso?\n2) Em qual tarifa o autor adquiriu as passagens, bem como suas regras tarifárias?\n3) Houve o reembolso de algum valor? Qual? Favor anexar o comprovante no sistema.\n4) Qual o valor cobrado de taxa no caso de cancelamento de passagem?"
+},
+{
+    "title": "Remarcação / Diferença Tarifária",
+    "dependent": "EQUIPE RESERVA SAORO - BILHETE/RESERVA",
+    "content": "1) A remarcação decorreu de escolha do cliente ou por fatos alheios à sua vontade?\n2) Qual é o valor para remarcação da viagem?\n3) Esse valor foi informado ao cliente?\n4) Há multa decorrente da remarcação?\n5) Houve contato com o FALE? Quais as tratativas?\n6) Anexar tela que comprove o nome de todos os passageiros que constam na reserva."
+},
+{
+    "title": "Extravio Temporário de Bagagem",
+    "dependent": "Aeroporto de Origem ou do Destino (a depender de onde os fatos ocorreram)",
+    "content": "1) A bagagem foi extraviada? Qual o número da RIB?\n2) O Extravio foi temporário ou definitivo?\n3) Quando foi o extravio e qual a data que o passageiro recebeu a bagagem?\n4) Houve compensação? Qual o valor?\n5) Se o cliente recebeu a bagagem, após a entrega, houve reporte de avaria/violação? Em caso afirmativo, qual a RIB de dano? Houve compensação referente ao dano? Favor anexar o comprovante de quitação\n6) Com qual Cia foi aberta a RIB?\n7) Houve tratativa no FALE? Por favor, faça um breve relato do que foi acordado com o passageiro.\n8) Anexar um print com todos os pax que constam na reserva.\n9) Qual o canal emissor das passagens?"
+},
+{
+    "title": "Excesso de Bagagem",
+    "dependent": "Aeroporto de Origem ou do Destino (a depender de onde os fatos ocorreram)",
+    "content": "1) Qual é a franquia de bagagem permitida ao autor?\n2) Quantos quilogramas de bagagem foi excedido da franquia?\n3) Qual o valor cobrado por quilograma de excesso?\n4) Foi pago pelo pax?\n5) Possuímos documentos que comprovem a ausência de responsabilidade da TAM? Favor anexar os documentos no sistema.\n6) Houve contato com o FALE? Quais as tratativas?"
+},
+{
+    "title": "Violação de Bagagem",
+    "dependent": "Aeroporto de Origem ou do Destino (a depender de onde os fatos ocorreram)",
+    "content": "1) Houve de fato a violação na bagagem?\n2) Qual o peso inicial e final da bagagem do autor?\n3) Qual o valor pago por quilograma da bagagem?\n4) Foi aberta RIB? Caso positivo, favor anexar a RIB no sistema.\n5) Houve pagamento de indenização ao pax devido a violação da bagagem? Qual o valor? Favor anexar o comprovante no sistema.\n6) Houve contato com o FALE? Quais as tratativas?"
+},
+{
+    "title": "Impedimento de Embarque - No Show",
+    "dependent": "Aeroporto de Origem ou do Destino (a depender de onde os fatos ocorreram)",
+    "content": "1) Houve No show? Caso positivo, houve solicitação de reembolso pelo pax? Qual valor?\n2) Foi reembolsado algum valor? Qual valor? Em qual data? Favor anexar comprovantes no sistema.\n3) Houve contato com o FALE? Quais as tratativas?\n4) Anexar tela que comprove o nome de todos os passageiros que constam na reserva."
+},
+{
+    "title": "Impedimento de embarque – documentação irregular",
+    "dependent": "Aeroporto de Origem ou do Destino (a depender de onde os fatos ocorreram)",
+    "content": "1) Qual era a documentação que o PAX portava na hora do embarque?\n2) Qual o motivo da irregularidade?\n3) O pax não conseguiu embarcar devido a essa irregularidade?\n4) O pax foi realocado ou teve que adquirir novas passagens? Caso tenha sido realocado, em qual data e voo?\n5) Havia outro tipo de documentação para ao PAX apresentar e poder embarcar?\n6) Possuímos documentos? Caso positivo, favor anexar documentos.\n7) Houve contato com o FALE? Quais as tratativas?\n8) Anexar tela que comprove o nome de todos os passageiros que constam na reserva."
+},
+{
+    "title": "Impedimento de Embarque – problema com a reserva",
+    "dependent": "EQUIPE RESERVA SAORO - BILHETE/RESERVA",
+    "content": "1) A reserva das passagens foram pagas e confirmadas?\n2) Qual o motivo da reserva não constar no sistema? Possuímos documentos que comprovem que não houve a reserva?\n3) O pax foi realocado pela companhia? Em qual data e voo?\n4) Anexar tela que comprove o nome de todos os passageiros que constam na reserva."
+},
+{
+    "title": "Problema de pontuação",
+    "dependent": "Multiplus - Incorporação",
+    "content": "1) Quais são as regras para devolução de pontos em caso de cancelamento da passagem?\n2) Qual a pontuação devolvida aos autores?\n3) Qual pontuação atual dos autores?\n4) Possuímos documentos referente ao ocorrido? Favor anexar no sistema."
+},
+{
+    "title": "Promoções e Propagandas",
+    "dependent": "SUPORTE AO SITE",
+    "content": "1) Houve algum problema para aquisição de passagens? Possuímos documentos que comprovem a regularidade? De fato existe essa promoção? Favor anexar os documentos no sistema."
+},
+{
+    "title": "Alteração de Classe",
+    "dependent": "Aeroporto de Origem ou do Destino (a depender de onde os fatos ocorreram)",
+    "content": "1) Houve a cobrança do serviço?\n2) O pax recebeu o serviço contratado?\n3) Qual é o status do serviço?\n4) Favor confirmar em qual assento o pax voou. Favor informar se ele foi realocado em assento semelhante ou não.\n5) Por qual motivo o pax não pode voar na classe contratada?\n6) Houve reembolso do valor pago a maior pelas passagens em primeira classe/premium business?\n7) Houve contato com o FALE? Quais as tratativas?"
+},
+{
+    "title": "Problemas Espaço+/ Berço",
+    "dependent": "Aeroporto de Origem ou do Destino (a depender de onde os fatos ocorreram)",
+    "content": "1) O espaço+/berço foi adquirido?\n2) Houve pagamento da taxa? Em caso positivo, em qual valor?\n3) Favor confirmar em qual assento o pax voou? Caso realocado, o novo assento era espaço+?\n4) Haviam outros passageiros especiais no voo?\n5) Houve reembolso do valor pago pelo assento conforto? Favor anexar os documentos no sistema."
+},
+{
+    "title": "PNAE",
+    "dependent": "Aeroporto de Origem ou do Destino (a depender de onde os fatos ocorreram)",
+    "content": "1) Havia necessidade de preenchimento do MEDIF? Caso positivo, foi preenchido?\n2) Quais foram as codições do embarque do PNE?\n3) Os serviços contratados foram prestados?\n4) Houve prioridade de embarque? Favor anexar documentos no sistema.\n5) Houve contato com o FALE? Quais as tratativas?"
+},
+{
+    "title": "Clientes com necessidades especiais",
+    "dependent": "Aeroporto de Origem ou do Destino (a depender de onde os fatos ocorreram)",
+    "content": "1) Clientes que possuem necessidades especiais, ou que possuem casos médicos, que necessitem de uma análise para autorização de viagem, por exemplo, aqueles que precisam de maca, oxigênio, cadeira de rodas, etc. Questionamento a depender do serviço descrito na inicial, mas basicamente será questionado se há necessidade de apresentação de MEDIF? Em casos com MEDIF já informado, se houve apuração interna pela LATAM? Se o serviço solicitado foi disponibilizado?"
+},
+{
+    "title": "Problemas envolvendo o transporte de Cargas",
+    "dependent": "Cargas",
+    "content": "1) Houve extravio/atraso na entrega? Por qual motivo?\n2) Qual foi o serviço contratado?\n3) Teve ressalva?\n4) Houve tratativas de acordo extrajudicial? Temos documentos? Caso positivo, favor anexar no sistema.\n5) Favor informar o centro de custo."
+},
+{
+    "title": "Para obter informações de contato com o FALE",
+    "dependent": "SAODP03",
+    "content": "1) Houve contato com a TAM?\n2) Qual foi a orientação passada ao pax?\n3) Temos registro do contato?\n4) Por gentileza anexar docs que comprovem."
+},
+{
+    "title": "Alimentação Especial",
+    "dependent": "EQUIPE RESERVA SAORO - BILHETE/RESERVA",
+    "content": "1) Houve solicitação de alimentação especial?\n2) A alimentação especial solicitada foi embarcada no avião?\n3) É possível confirmar com a tripulação se a alimentação foi servida?\n4) Consta registro de reclamação do não recebimento da alimentação especial durante o voo?\n5) Houve contato com o FALE? Quais as tratativas?"
+},
+{
+    "title": "Casos envolvendo a TAM Viagens e suas franqueadas",
+    "dependent": "TAM VIAGENS",
+    "content": "1) Houve venda de pacote?\n2) Qual o serviço contratado?\n3) Qual o motivo da não realização do serviço?"
+},
+{
+    "title": "Clientes Vips",
+    "dependent": "Aeroporto de Origem ou do Destino (a depender de onde os fatos ocorreram)",
+    "content": "1) Clientes VIPs, como fidelidades blacks, que viajavam em Primeira Classe, Autoridades, personalidades, etc e são responsáveis pelos serviços de classe executiva e Salas VIPs.\n2) Quais os serviços especiais estavam disponíveis para o cliente e se houve disponibilização, bem como utilização pelo pax?"
+},
+{
+    "title": "Acidente/ Incidente",
+    "dependent": "Aeroporto de Origem ou do Destino (a depender de onde os fatos ocorreram)",
+    "content": "1) Temos registro do ocorrido?\n2) Foi prestado socorro a pax? Favor anexar os documentos no sistema."
+},
+{
+    "title": "Quando uma agência de viagens (não a TAM Viagens) ingressa com ação contra a LATAM",
+    "dependent": "Financeiro",
+    "content": "1) A agência entrou em contato com a TAM?\n2) Tivemos algum problema no acesso da agência para gerar a passagem? Favor anexar os documentos no sistema."
+},
+{
+    "title": "Solicitação de Lista de PAX (ofícios e determinações judiciais)",
+    "dependent": "Receita Voada (pedir pela planilha e não pelo LB)",
+    "content": "1) Favor encaminhar a lista de pax."
+},
+{
+    "title": "Solicitação de Lista de PAX",
+    "dependent": "Bilhete/Reserva",
+    "content": "1) Favor encaminhar a lista de relação de voo."
+},
+{
+    "title": "Solicitação de Lista de PAX",
+    "dependent": "Multiplus - Incorporação",
+    "content": "1) Favor encaminhar dados cadastrais localizados no sistema."
+}]
+}
