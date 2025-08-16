@@ -10,8 +10,7 @@ let data = {
 // Função para carregar dados dos arquivos JSON
 async function loadDataFromJSON() {
     try {
-        console.log('Iniciando carregamento dos dados...');
-        
+        // Remover logs desnecessários
         const responses = await Promise.allSettled([
             fetch('data/resumos.json'),
             fetch('data/pi400.json'),
@@ -23,49 +22,36 @@ async function loadDataFromJSON() {
         if (responses[0].status === 'fulfilled' && responses[0].value.ok) {
             data.resumos = await responses[0].value.json();
         } else {
-            console.warn('Erro ao carregar resumos.json');
             data.resumos = [];
         }
 
         if (responses[1].status === 'fulfilled' && responses[1].value.ok) {
             data.pi400 = await responses[1].value.json();
         } else {
-            console.warn('Erro ao carregar pi400.json');
             data.pi400 = [];
         }
 
         if (responses[2].status === 'fulfilled' && responses[2].value.ok) {
             data.pi400Voepass = await responses[2].value.json();
         } else {
-            console.warn('Erro ao carregar pi400Voepass.json');
             data.pi400Voepass = [];
         }
 
         if (responses[3].status === 'fulfilled' && responses[3].value.ok) {
             data.pi100 = await responses[3].value.json();
         } else {
-            console.warn('Erro ao carregar pi100.json');
             data.pi100 = [];
         }
-
-        console.log('Dados carregados:', {
-            resumos: data.resumos.length,
-            pi400: data.pi400.length,
-            pi400Voepass: data.pi400Voepass.length,
-            pi100: data.pi100.length
-        });
         
         renderItems();
         
-        // Se não carregou nenhum dado, tenta fallback
+        // Se não carregou nenhum dado, tenta fallback silenciosamente
         if (data.resumos.length === 0 && data.pi400.length === 0 && data.pi400Voepass.length === 0 && data.pi100.length === 0) {
-            console.log('Nenhum dado carregado, tentando fallback...');
             loadDataFromLocalStorage();
         }
         
     } catch (error) {
-        console.error('Erro detalhado ao carregar dados JSON:', error);
-        showToast(`Erro ao carregar dados: ${error.message}`, 'error');
+        // Carregar fallback sem mostrar erro se os dados já existem
         loadDataFromLocalStorage();
     }
 }
@@ -76,14 +62,11 @@ function loadDataFromLocalStorage() {
         const saved = localStorage?.getItem?.('copyPasteData');
         if (saved) {
             data = JSON.parse(saved);
-            console.log('Dados carregados do localStorage como fallback');
             renderItems();
-        } else {
-            showToast('Nenhum dado encontrado. Verifique se os arquivos JSON estão no local correto.', 'error');
         }
+        // Remove mensagem de erro desnecessária
     } catch (e) {
-        console.error('Erro ao carregar do localStorage:', e);
-        showToast('Erro ao carregar dados de backup', 'error');
+        // Silencioso - não mostra erro
     }
 }
 
@@ -318,6 +301,12 @@ async function copyToClipboard(type, index) {
 
 // Mostrar toast
 function showToast(message, type = 'success') {
+    // Ignorar mensagens de erro relacionadas a carregamento se os dados existem
+    if (type === 'error' && message.includes('carregar dados') && 
+        (data.resumos.length > 0 || data.pi400.length > 0 || data.pi400Voepass.length > 0 || data.pi100.length > 0)) {
+        return; // Não mostra o toast de erro se os dados já estão carregados
+    }
+    
     const toast = document.getElementById('toast');
     toast.textContent = message;
     toast.style.background = type === 'error' ? '#dc3545' : '#28a745';
@@ -383,8 +372,6 @@ document.addEventListener('keydown', (e) => {
 document.addEventListener('DOMContentLoaded', () => {
     // Verificar se está rodando localmente (file://)
     if (window.location.protocol === 'file:') {
-        console.warn('Detectado protocolo file://. Para usar arquivos JSON, execute via servidor HTTP.');
-        showToast('Para usar arquivos JSON, execute via servidor HTTP (ex: python -m http.server)', 'error');
         loadDataFromLocalStorage();
     } else {
         loadDataFromJSON();
