@@ -6,7 +6,7 @@ O objetivo é disponibilizar informações resumidas e claras, facilitando a com
 ---
 
 ## 🌐 Acesse o site
-🔗 [Clique aqui para acessar](https://SEU-USUARIO.github.io/NOME-DO-REPOSITORIO)
+🔗 [Clique aqui para acessar](https://allanccufcg.github.io/resumsANDquests/)
 
 ---
 
@@ -23,3 +23,4 @@ O objetivo é disponibilizar informações resumidas e claras, facilitando a com
 - **GitHub Pages** (para hospedagem)
 
 ---
+
