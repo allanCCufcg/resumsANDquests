@@ -12,43 +12,25 @@ async function loadDataFromJSON() {
     try {
         console.log('Iniciando carregamento dos dados...');
         
-        const responses = await Promise.allSettled([
+        const [resumosResponse, pi400Response, pi400VoepassResponse, pi100Response] = await Promise.all([
             fetch('data/resumos.json'),
             fetch('data/pi400.json'),
             fetch('data/pi400Voepass.json'),
             fetch('data/pi100.json')
         ]);
 
-        // Processar cada resposta individualmente
-        if (responses[0].status === 'fulfilled' && responses[0].value.ok) {
-            data.resumos = await responses[0].value.json();
-        } else {
-            console.warn('Erro ao carregar resumos.json');
-            data.resumos = [];
-        }
+        // Verificar se todas as respostas são válidas
+        if (!resumosResponse.ok) throw new Error(`Erro ao carregar resumos.json: ${resumosResponse.status}`);
+        if (!pi400Response.ok) throw new Error(`Erro ao carregar pi400.json: ${pi400Response.status}`);
+        if (!pi400VoepassResponse.ok) throw new Error(`Erro ao carregar pi400Voepass.json: ${pi400VoepassResponse.status}`);
+        if (!pi100Response.ok) throw new Error(`Erro ao carregar pi100.json: ${pi100Response.status}`);
 
-        if (responses[1].status === 'fulfilled' && responses[1].value.ok) {
-            data.pi400 = await responses[1].value.json();
-        } else {
-            console.warn('Erro ao carregar pi400.json');
-            data.pi400 = [];
-        }
+        data.resumos = await resumosResponse.json();
+        data.pi400 = await pi400Response.json();
+        data.pi400Voepass = await pi400VoepassResponse.json();
+        data.pi100 = await pi100Response.json();
 
-        if (responses[2].status === 'fulfilled' && responses[2].value.ok) {
-            data.pi400Voepass = await responses[2].value.json();
-        } else {
-            console.warn('Erro ao carregar pi400Voepass.json');
-            data.pi400Voepass = [];
-        }
-
-        if (responses[3].status === 'fulfilled' && responses[3].value.ok) {
-            data.pi100 = await responses[3].value.json();
-        } else {
-            console.warn('Erro ao carregar pi100.json');
-            data.pi100 = [];
-        }
-
-        console.log('Dados carregados:', {
+        console.log('Dados carregados com sucesso!', {
             resumos: data.resumos.length,
             pi400: data.pi400.length,
             pi400Voepass: data.pi400Voepass.length,
@@ -56,16 +38,11 @@ async function loadDataFromJSON() {
         });
         
         renderItems();
-        
-        // Se não carregou nenhum dado, tenta fallback
-        if (data.resumos.length === 0 && data.pi400.length === 0 && data.pi400Voepass.length === 0 && data.pi100.length === 0) {
-            console.log('Nenhum dado carregado, tentando fallback...');
-            loadDataFromLocalStorage();
-        }
-        
     } catch (error) {
         console.error('Erro detalhado ao carregar dados JSON:', error);
         showToast(`Erro ao carregar dados: ${error.message}`, 'error');
+        
+        // Fallback: tentar carregar do localStorage se existir
         loadDataFromLocalStorage();
     }
 }
@@ -123,22 +100,10 @@ function renderItems() {
     const pi400VoepassList = document.getElementById('pi400Voepass-list');
     const pi100List = document.getElementById('pi100-list');
 
-    // Verificar se os dados existem e são arrays antes de usar .map()
-    if (resumosList && Array.isArray(data.resumos)) {
-        resumosList.innerHTML = data.resumos.map((item, index) => createItemHTML(item, index, 'resumos')).join('');
-    }
-    
-    if (pi400List && Array.isArray(data.pi400)) {
-        pi400List.innerHTML = data.pi400.map((item, index) => createItemHTML(item, index, 'pi400')).join('');
-    }
-    
-    if (pi400VoepassList && Array.isArray(data.pi400Voepass)) {
-        pi400VoepassList.innerHTML = data.pi400Voepass.map((item, index) => createItemHTML(item, index, 'pi400Voepass')).join('');
-    }
-    
-    if (pi100List && Array.isArray(data.pi100)) {
-        pi100List.innerHTML = data.pi100.map((item, index) => createItemHTML(item, index, 'pi100')).join('');
-    }
+    resumosList.innerHTML = data.resumos.map((item, index) => createItemHTML(item, index, 'resumos')).join('');
+    pi400List.innerHTML = data.pi400.map((item, index) => createItemHTML(item, index, 'pi400')).join('');
+    pi400VoepassList.innerHTML = data.pi400Voepass.map((item, index) => createItemHTML(item, index, 'pi400Voepass')).join('');
+    pi100List.innerHTML = data.pi100.map((item, index) => createItemHTML(item, index, 'pi100')).join('');
     
     // Criar navegação rápida
     createQuickNav();
@@ -150,41 +115,34 @@ function createQuickNav() {
     const pi400VoepassNav = document.getElementById('pi400Voepass-nav');
     const pi100Nav = document.getElementById('pi100-nav');
     
-    // Para resumos - verificar se existem dados
-    if (resumosNav && Array.isArray(data.resumos) && data.resumos.length > 0) {
-        const resumosButtons = data.resumos.slice(0, 8).map((item, index) => {
-            const shortTitle = item.title.split(' ')[0] || item.title.substring(0, 8);
-            return `<button class="quick-nav-btn" onclick="scrollToItem('resumos', ${index})">${shortTitle}</button>`;
-        }).join('');
-        resumosNav.innerHTML = resumosButtons;
-    }
+    // Para resumos
+    const resumosButtons = data.resumos.slice(0, 8).map((item, index) => {
+        const shortTitle = item.title.split(' ')[0] || item.title.substring(0, 8);
+        return `<button class="quick-nav-btn" onclick="scrollToItem('resumos', ${index})">${shortTitle}</button>`;
+    }).join('');
     
-    // Para PI 400 - verificar se existem dados
-    if (pi400Nav && Array.isArray(data.pi400) && data.pi400.length > 0) {
-        const pi400Buttons = data.pi400.slice(0, 12).map((item, index) => {
-            const shortTitle = item.title.split(' ')[0] || item.title.substring(0, 10);
-            return `<button class="quick-nav-btn" onclick="scrollToItem('pi400', ${index})">${shortTitle}</button>`;
-        }).join('');
-        pi400Nav.innerHTML = pi400Buttons;
-    }
+    // Para PI 400
+    const pi400Buttons = data.pi400.slice(0, 12).map((item, index) => {
+        const shortTitle = item.title.split(' ')[0] || item.title.substring(0, 10);
+        return `<button class="quick-nav-btn" onclick="scrollToItem('pi400', ${index})">${shortTitle}</button>`;
+    }).join('');
     
-    // Para PI 400 - VOEPASS - verificar se existem dados
-    if (pi400VoepassNav && Array.isArray(data.pi400Voepass) && data.pi400Voepass.length > 0) {
-        const pi400VoepassButtons = data.pi400Voepass.slice(0, 12).map((item, index) => {
-            const shortTitle = item.title.split(' ')[0] || item.title.substring(0, 10);
-            return `<button class="quick-nav-btn" onclick="scrollToItem('pi400Voepass', ${index})">${shortTitle}</button>`;
-        }).join('');
-        pi400VoepassNav.innerHTML = pi400VoepassButtons;
-    }
+    // Para PI 400 - VOEPASS
+    const pi400VoepassButtons = data.pi400Voepass.slice(0, 12).map((item, index) => {
+        const shortTitle = item.title.split(' ')[0] || item.title.substring(0, 10);
+        return `<button class="quick-nav-btn" onclick="scrollToItem('pi400Voepass', ${index})">${shortTitle}</button>`;
+    }).join('');
     
-    // Para PI 100 - verificar se existem dados
-    if (pi100Nav && Array.isArray(data.pi100) && data.pi100.length > 0) {
-        const pi100Buttons = data.pi100.slice(0, 12).map((item, index) => {
-            const shortTitle = item.title.split(' ')[0] || item.title.substring(0, 10);
-            return `<button class="quick-nav-btn" onclick="scrollToItem('pi100', ${index})">${shortTitle}</button>`;
-        }).join('');
-        pi100Nav.innerHTML = pi100Buttons;
-    }
+    // Para PI 100
+    const pi100Buttons = data.pi100.slice(0, 12).map((item, index) => {
+        const shortTitle = item.title.split(' ')[0] || item.title.substring(0, 10);
+        return `<button class="quick-nav-btn" onclick="scrollToItem('pi100', ${index})">${shortTitle}</button>`;
+    }).join('');
+    
+    resumosNav.innerHTML = resumosButtons;
+    pi400Nav.innerHTML = pi400Buttons;
+    pi400VoepassNav.innerHTML = pi400VoepassButtons;
+    pi100Nav.innerHTML = pi100Buttons;
 }
 
 // Scroll para item específico
@@ -381,12 +339,5 @@ document.addEventListener('keydown', (e) => {
 
 // Inicializar - MODIFICADO para carregar dados dos JSONs
 document.addEventListener('DOMContentLoaded', () => {
-    // Verificar se está rodando localmente (file://)
-    if (window.location.protocol === 'file:') {
-        console.warn('Detectado protocolo file://. Para usar arquivos JSON, execute via servidor HTTP.');
-        showToast('Para usar arquivos JSON, execute via servidor HTTP (ex: python -m http.server)', 'error');
-        loadDataFromLocalStorage();
-    } else {
-        loadDataFromJSON();
-    }
+    loadDataFromJSON();
 });
